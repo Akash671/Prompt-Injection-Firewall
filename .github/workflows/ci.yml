@@ -39,5 +39,7 @@ jobs:
           python -m compileall app main.py
 
       - name: Run tests
+        env:
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
         run: |
           python run_tests.py

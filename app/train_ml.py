@@ -13,7 +13,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATASET_DIR = BASE_DIR / "tests"
 MODEL_DIR = BASE_DIR / "app" / "models"
 
-
+# Create model directory automatically
+MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
 
 #DATASET_DIR = Path("tests")

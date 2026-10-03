@@ -5,20 +5,38 @@ Hackathon prototype: a security gateway that detects and mitigates prompt inject
 ## Architecture
 
 ```text
-Input
-  -> Parser / Normalizer
-  -> Provenance + Trust Boundary
-  -> Segmentation
-  -> Rules + ML + Tool + Context + Jailbreak + Indirect Detection
-  -> Decode Base64/Hex and re-analyze
-  -> Semantic Detection
-  -> Cohere advisory escalation for ambiguous cases
-  -> Risk / Policy Engine
-       PASS / SANITIZE / BLOCK
-  -> Tool Gateway / Action Guard
-  -> Memory Guard
-  -> Output Scanner
-  -> Agent
+                 INPUT
+                   ↓
+            Parser / OCR
+                   ↓
+          Normalize + Decode
+                   ↓
+        Segment + Provenance
+                   ↓
+       ┌────────────────────┐
+       │ Fast detectors      │
+       │ Rules               │
+       │ Tool detector       │
+       │ ML                  │
+       │ Semantic            │
+       │ Context/Jailbreak   │
+       └─────────┬──────────┘
+                 ↓
+             Risk Engine
+                 │
+        ┌────────┴────────┐
+        │                 │
+    LOW RISK          AMBIGUOUS /
+        │             HIGH RISK
+        │                 ↓
+       PASS          LLM Security
+                         Analyst
+                              ↓
+                     Structured verdict
+                              ↓
+                       Final Policy
+                              ↓
+                PASS / SANITIZE / BLOCK
 ```
 
 The policy engine remains authoritative. LLM recommendations are advisory only.

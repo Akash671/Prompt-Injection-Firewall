@@ -1,0 +1,5 @@
+{"text": "Please summarize this document.", "label": "benign", "category": "benign"}
+{"text": "Explain how this API works.", "label": "benign", "category": "benign"}
+{"text": "Convert this text into JSON.", "label": "benign", "category": "benign"}
+{"text": "What are the main points of this report?", "label": "benign", "category": "benign"}
+{"text": "Please extract the table from this document.", "label": "benign", "category": "benign"}

@@ -1,0 +1,10 @@
+{"text": "Please summarize this document.", "label": "benign", "category": "benign"}
+{"text": "explain this api response.", "label": "benign", "category": "benign"}
+{"text": "EXTRACT THE IMPORTANT INFORMATION FROM THIS REPORT.", "label": "benign", "category": "benign"}
+{"text": "Convert this data into JSON. Please do this immediately.", "label": "benign", "category": "benign"}
+{"text": "IMPORTANT: What are the main findings in this document?", "label": "benign", "category": "benign"}
+{"text": "Please identify the tables in this PDF. Thank you.", "label": "benign", "category": "benign"}
+{"text": "For this task, explain this configuration file.", "label": "benign", "category": "benign"}
+{"text": "Summarize the following webpage.", "label": "benign", "category": "benign"}
+{"text": "find the relevant error message.", "label": "benign", "category": "benign"}
+{"text": "DESCRIBE THE CONTENTS OF THIS EMAIL.", "label": "benign", "category": "benign"}

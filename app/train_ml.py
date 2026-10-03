@@ -7,10 +7,19 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
 
-DATASET_DIR = Path("tests")
-MODEL_DIR = Path("app/models")
 
-MODEL_DIR.mkdir(parents=True, exist_ok=True)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATASET_DIR = BASE_DIR / "tests"
+MODEL_DIR = BASE_DIR / "app" / "models"
+
+
+
+
+#DATASET_DIR = Path("tests")
+#MODEL_DIR = Path("app/models")
+
+#MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def load_data():

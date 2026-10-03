@@ -51,7 +51,7 @@ Text, HTML, PDF, DOCX and image/OCR content are supported. Source/trust metadata
 
 ## Technology
 
-Python 3.9, scikit-learn, TF-IDF + Logistic Regression, SentenceTransformers, Cohere, BeautifulSoup, pypdf, python-docx, Tesseract/pytesseract, Streamlit, pytest, GitHub Actions and Docker.
+Python 3.9, scikit-learn, TF-IDF + Logistic Regression, SentenceTransformers, Cohere, BeautifulSoup, pypdf, python-docx, Tesseract/pytesseract, Streamlit, pytest, GitHub Actions.
 
 ## Current benchmark
 
@@ -64,14 +64,24 @@ These are small curated engineering benchmarks, not production-scale statistical
 ## Run
 
 ```bash
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Linux/macOS:
-source .venv/bin/activate
 
-pip install -r requirements.txt
-streamlit run app.py
+
+$ python -m venv .venv
+# Windows:
+$ .venv\Scripts\activate
+# Linux/macOS:
+$ source .venv/bin/activate
+
+$ git clone https://github.com/Akash671/Prompt-Injection-Firewall.git
+# go to directory
+$ cd Prompt-Injection-Firewall
+
+$ pip install -r requirements.txt
+
+# set cohere llm api key here
+$ export COHERE_API_KEY="YOUR_KEY"
+
+$ streamlit run app.py
 ```
 
 Optional Cohere escalation:
@@ -101,3 +111,48 @@ GitHub Actions performs dependency installation, Python compilation and the proj
 3. Human-validated feedback and controlled retraining.
 4. Model registry, drift monitoring, SIEM/SOC integration and enterprise policy management.
 
+
+```text
+                   ┌──────────────┐
+                   │   API / SDK  │
+                   └──────┬───────┘
+                          │
+                    INPUT FIREWALL
+                          │
+        ┌─────────────────┼─────────────────┐
+        ▼                 ▼                 ▼
+     Parser          Provenance         Normalizer
+        │                 │                 │
+        └─────────────────┼─────────────────┘
+                          ▼
+                     Segmentation
+                          │
+             ┌────────────┼────────────┐
+             ▼            ▼            ▼
+           Rules       Transformer    Semantic
+             │            │            │
+             │            │          FAISS
+             └────────────┼────────────┘
+                          ▼
+                    Ensemble Engine
+                          │
+                    Risk / Policy
+                          │
+             ┌────────────┼────────────┐
+             ▼            ▼            ▼
+           PASS        SANITIZE      BLOCK
+                          │
+                    if ambiguous
+                          ▼
+                       Cohere
+                          │
+                          ▼
+                    Final Policy
+                          │
+             ┌────────────┼────────────┐
+             ▼            ▼            ▼
+        Tool Guard    Memory Guard  Output Guard
+                          │
+                          ▼
+                         AGENT
+```

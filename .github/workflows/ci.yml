@@ -1,17 +1,43 @@
 name: CI
+
 on:
   push:
     branches: ["main", "master"]
   pull_request:
+
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.9"
-      - run: python -m pip install --upgrade pip
-      - run: pip install -r requirements.txt
-      - run: python -m compileall app main.py
-      - run: python run_tests.py
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # IMPORTANT:
+      # injection_classifier.joblib is generated from tests/*/samples.jsonl
+      - name: Train ML model
+        run: |
+          python -m app.train_ml
+
+      - name: Verify model exists
+        run: |
+          test -f app/models/injection_classifier.joblib
+          ls -lh app/models/injection_classifier.joblib
+
+      - name: Compile check
+        run: |
+          python -m compileall app main.py
+
+      - name: Run tests
+        run: |
+          python run_tests.py

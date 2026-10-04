@@ -65,6 +65,7 @@ These are small curated engineering benchmarks, not production-scale statistical
 
 ```bash
 
+# first download and install Tesseract-OCR then follow below steps
 
 $ python -m venv .venv
 # Windows:

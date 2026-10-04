@@ -147,6 +147,11 @@ $ python -m tests.evaluate_benchmark
 $ python run_tests.py
 ```
 
+
+Demo:
+
+![Alt text description](images/demo.png)
+
 ## CI/CD
 
 GitHub Actions performs dependency installation, Python compilation and the project test suite. Production deployment can extend this pipeline with security/dependency scanning, Docker build, registry push, staging smoke tests and controlled production deployment.

@@ -148,7 +148,7 @@ $ python run_tests.py
 ```
 
 
-Demo:
+## Demo:
 
 <img src="images\screenshot.png" alt="Alt text" width="400" />
 

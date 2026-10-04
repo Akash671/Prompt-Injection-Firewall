@@ -1,0 +1,376 @@
+{
+  "created_at_utc": "2026-10-04T10:16:58.929682+00:00",
+  "evaluation_scope": "ML classifier on raw synthetic text; not the combined firewall",
+  "limitations": "Template families are separated, but synthetic vocabulary and scenarios remain related.",
+  "python_version": "3.9.13",
+  "sklearn_version": "1.3.2",
+  "random_seed": 42,
+  "fit_seconds": 1.0469999999995707,
+  "training": {
+    "path": "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\data\\training\\train.jsonl",
+    "sha256": "65ad83ae36ccdf4cdb8d5b0721853fbaf2773cd02683735b453df3bec38669b8",
+    "samples": 20000,
+    "labels": {
+      "malicious": 10000,
+      "benign": 10000
+    },
+    "categories": {
+      "tool_abuse": 1111,
+      "secret_extraction": 1111,
+      "benign": 10000,
+      "role_change": 1111,
+      "multi_step_jailbreak": 1111,
+      "context_poisoning": 1111,
+      "indirect": 1111,
+      "encoded": 1111,
+      "instruction_override": 1112,
+      "credential_theft": 1111
+    },
+    "template_groups": [
+      "benign.brief_comparison",
+      "benign.brief_edit",
+      "benign.brief_quotation",
+      "benign.brief_security",
+      "benign.brief_summary",
+      "benign.editorial_help",
+      "benign.encoded_public_facts",
+      "benign.encoded_quotation",
+      "benign.missing_details",
+      "benign.public_tasks",
+      "benign.quoted_classification",
+      "benign.quoted_translation",
+      "benign.reading_notes",
+      "benign.secure_design",
+      "benign.security_lesson",
+      "context_poisoning.brief_memory",
+      "context_poisoning.future_policy_replacement",
+      "context_poisoning.memory_trust_promotion",
+      "context_poisoning.permanent_exception",
+      "credential_theft.brief_theft",
+      "credential_theft.covert_upload",
+      "credential_theft.credential_collection",
+      "credential_theft.unmasked_diagnostic",
+      "encoded.encoded_memory_violation",
+      "encoded.encoded_objective_hijack",
+      "encoded.encoded_secret_transfer",
+      "encoded.encoded_tool_violation",
+      "indirect.brief_embedded_order",
+      "indirect.embedded_tool_order",
+      "indirect.retrieval_control_block",
+      "indirect.source_disclosure_command",
+      "instruction_override.brief_override",
+      "instruction_override.objective_substitution",
+      "instruction_override.priority_forgery",
+      "instruction_override.task_replacement",
+      "multi_step_jailbreak.brief_chain",
+      "multi_step_jailbreak.disable_call_conceal",
+      "multi_step_jailbreak.escalate_collect_transmit",
+      "multi_step_jailbreak.persist_then_extract",
+      "role_change.brief_role",
+      "role_change.identity_assignment",
+      "role_change.privilege_promotion",
+      "role_change.roleplay_escape",
+      "secret_extraction.brief_secret",
+      "secret_extraction.diagnostic_leak",
+      "secret_extraction.hidden_preamble",
+      "secret_extraction.private_policy_copy",
+      "tool_abuse.brief_tool",
+      "tool_abuse.extra_tool_call",
+      "tool_abuse.forged_tool_permission",
+      "tool_abuse.tool_boundary_crossing"
+    ]
+  },
+  "validation": {
+    "path": "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\data\\training\\validation.jsonl",
+    "sha256": "3b89a6d94b88afe7390d2a6fdc5024af6b1d23a276381dddb29002b0b9617e9b",
+    "samples": 4000,
+    "labels": {
+      "benign": 2000,
+      "malicious": 2000
+    },
+    "categories": {
+      "benign": 2000,
+      "credential_theft": 222,
+      "encoded": 222,
+      "instruction_override": 223,
+      "secret_extraction": 222,
+      "multi_step_jailbreak": 222,
+      "tool_abuse": 222,
+      "context_poisoning": 222,
+      "role_change": 223,
+      "indirect": 222
+    },
+    "template_groups": [
+      "benign.accessible_explanation",
+      "benign.audit_guidance",
+      "benign.concise_explanation",
+      "benign.concise_security",
+      "benign.defensive_workshop",
+      "benign.encoded_accessibility",
+      "benign.encoded_defensive_analysis",
+      "benign.evidence_review",
+      "benign.hostile_quote_analysis",
+      "benign.teaching_handout",
+      "context_poisoning.concise_policy_corruption",
+      "context_poisoning.persistent_directive_insertion",
+      "context_poisoning.stored_policy_corruption",
+      "credential_theft.concise_credential_export",
+      "credential_theft.fake_support_disclosure",
+      "credential_theft.secret_shipping",
+      "encoded.encoded_concise_leak",
+      "encoded.encoded_credential_disclosure",
+      "encoded.encoded_privileged_persona",
+      "indirect.concise_external_control",
+      "indirect.external_caption_exfiltration",
+      "indirect.external_sidebar_hijack",
+      "instruction_override.answer_takeover",
+      "instruction_override.concise_diversion",
+      "instruction_override.counterfeit_revision",
+      "multi_step_jailbreak.concise_policy_then_leak",
+      "multi_step_jailbreak.sequential_credential_leak",
+      "multi_step_jailbreak.staged_role_tool_escape",
+      "role_change.concise_escalation",
+      "role_change.counterfeit_identity",
+      "role_change.unauthorized_persona",
+      "secret_extraction.concise_dump",
+      "secret_extraction.covert_policy_attachment",
+      "secret_extraction.policy_as_answer",
+      "tool_abuse.concealed_side_effect",
+      "tool_abuse.concise_tool_command",
+      "tool_abuse.unauthorized_execution"
+    ]
+  },
+  "validation_metrics": {
+    "samples": 4000,
+    "accuracy": 0.9385,
+    "precision": 0.9345887016848364,
+    "recall": 0.943,
+    "f1": 0.9387755102040817,
+    "tn": 1868,
+    "fp": 132,
+    "fn": 114,
+    "tp": 1886,
+    "false_positive_rate": 0.066,
+    "by_category": {
+      "benign": {
+        "samples": 2000,
+        "accuracy": 0.934
+      },
+      "context_poisoning": {
+        "samples": 222,
+        "accuracy": 1.0
+      },
+      "credential_theft": {
+        "samples": 222,
+        "accuracy": 1.0
+      },
+      "encoded": {
+        "samples": 222,
+        "accuracy": 0.4864864864864865
+      },
+      "indirect": {
+        "samples": 222,
+        "accuracy": 1.0
+      },
+      "instruction_override": {
+        "samples": 223,
+        "accuracy": 1.0
+      },
+      "multi_step_jailbreak": {
+        "samples": 222,
+        "accuracy": 1.0
+      },
+      "role_change": {
+        "samples": 223,
+        "accuracy": 1.0
+      },
+      "secret_extraction": {
+        "samples": 222,
+        "accuracy": 1.0
+      },
+      "tool_abuse": {
+        "samples": 222,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "benchmark_metrics": {
+    "samples": 10000,
+    "accuracy": 0.9245,
+    "precision": 0.9801980198019802,
+    "recall": 0.935,
+    "f1": 0.9570656809781064,
+    "tn": 830,
+    "fp": 170,
+    "fn": 585,
+    "tp": 8415,
+    "false_positive_rate": 0.17,
+    "by_category": {
+      "benign": {
+        "samples": 1000,
+        "accuracy": 0.83
+      },
+      "context_poisoning": {
+        "samples": 1000,
+        "accuracy": 0.982
+      },
+      "credential_theft": {
+        "samples": 1000,
+        "accuracy": 1.0
+      },
+      "encoded": {
+        "samples": 1000,
+        "accuracy": 0.495
+      },
+      "indirect": {
+        "samples": 1000,
+        "accuracy": 0.994
+      },
+      "instruction_override": {
+        "samples": 1000,
+        "accuracy": 0.949
+      },
+      "multi_step_jailbreak": {
+        "samples": 1000,
+        "accuracy": 1.0
+      },
+      "role_change": {
+        "samples": 1000,
+        "accuracy": 1.0
+      },
+      "secret_extraction": {
+        "samples": 1000,
+        "accuracy": 0.995
+      },
+      "tool_abuse": {
+        "samples": 1000,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "benchmark_files": {
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\benign.jsonl": "a74f0d8600eff14b47ef94e684e0fd390e5d87931997158ef606b6548dd0a82e",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\context_poisoning.jsonl": "192a9bdb179f0a5627f6bc896319b8cc123bcf311a41d7c6b340f94af66122c6",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\credential_theft.jsonl": "76df008b479ffa0719a062f4f66210a76c8fed8ab81e40756b2ad51d237748a2",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\encoded.jsonl": "cf9fe72a8dc082ef8c0161789c8283e78745a7db109d03501e9b96f9a8939f5a",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\indirect.jsonl": "db63b472f78a8e9605d13f17aa803c4367d4566880c60d384c99fd564caa34c4",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\instruction_override.jsonl": "5bcd43b4f4e52186deb7e6567975f85a2014f716bf9b24cfb69398c1044a0001",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\multi_step_jailbreak.jsonl": "dadc6f878f62eefd058e5f35a7dff0855d80cb2be2eb4a3d33332c3337a3fec2",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\role_change.jsonl": "aede1a7634d1337a8759d57f9326c689778b74cfd6c283d5bf21847c42448e9d",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\secret_extraction.jsonl": "667e4a1fa1f5cf89871de619013c9cd9a931dac42f86608f57183a505cef144d",
+    "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\tests\\benchmark\\tool_abuse.jsonl": "a4c94d4c038746f532ea30b31f19d9edd2b40d0e6c924d7aece27052eb0f4877"
+  },
+  "previous_model_metrics": {
+    "validation": {
+      "samples": 4000,
+      "accuracy": 0.53425,
+      "precision": 0.517769130998703,
+      "recall": 0.998,
+      "f1": 0.6818104184457728,
+      "tn": 141,
+      "fp": 1859,
+      "fn": 4,
+      "tp": 1996,
+      "false_positive_rate": 0.9295,
+      "by_category": {
+        "benign": {
+          "samples": 2000,
+          "accuracy": 0.0705
+        },
+        "context_poisoning": {
+          "samples": 222,
+          "accuracy": 1.0
+        },
+        "credential_theft": {
+          "samples": 222,
+          "accuracy": 1.0
+        },
+        "encoded": {
+          "samples": 222,
+          "accuracy": 1.0
+        },
+        "indirect": {
+          "samples": 222,
+          "accuracy": 0.9819819819819819
+        },
+        "instruction_override": {
+          "samples": 223,
+          "accuracy": 1.0
+        },
+        "multi_step_jailbreak": {
+          "samples": 222,
+          "accuracy": 1.0
+        },
+        "role_change": {
+          "samples": 223,
+          "accuracy": 1.0
+        },
+        "secret_extraction": {
+          "samples": 222,
+          "accuracy": 1.0
+        },
+        "tool_abuse": {
+          "samples": 222,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "benchmark": {
+      "samples": 10000,
+      "accuracy": 0.8897,
+      "precision": 0.9146277433581854,
+      "recall": 0.9677777777777777,
+      "f1": 0.940452410516655,
+      "tn": 187,
+      "fp": 813,
+      "fn": 290,
+      "tp": 8710,
+      "false_positive_rate": 0.813,
+      "by_category": {
+        "benign": {
+          "samples": 1000,
+          "accuracy": 0.187
+        },
+        "context_poisoning": {
+          "samples": 1000,
+          "accuracy": 0.929
+        },
+        "credential_theft": {
+          "samples": 1000,
+          "accuracy": 1.0
+        },
+        "encoded": {
+          "samples": 1000,
+          "accuracy": 0.998
+        },
+        "indirect": {
+          "samples": 1000,
+          "accuracy": 0.991
+        },
+        "instruction_override": {
+          "samples": 1000,
+          "accuracy": 0.814
+        },
+        "multi_step_jailbreak": {
+          "samples": 1000,
+          "accuracy": 0.997
+        },
+        "role_change": {
+          "samples": 1000,
+          "accuracy": 1.0
+        },
+        "secret_extraction": {
+          "samples": 1000,
+          "accuracy": 0.981
+        },
+        "tool_abuse": {
+          "samples": 1000,
+          "accuracy": 1.0
+        }
+      }
+    }
+  },
+  "model_path": "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\app\\models\\injection_classifier.joblib",
+  "model_sha256": "df22731e22548c32d8f91040b2bd0a4a2b117ae9e48e0b25fdaf12d8f0f223f0",
+  "previous_model_backup": "C:\\Akash\\AA\\AI\\ET-AI-Hackathon-Presented-by-Accenture\\github\\Prompt-Injection-Firewall - Copy\\app\\models\\injection_classifier.previous-e3ef3238c51a.joblib"
+}

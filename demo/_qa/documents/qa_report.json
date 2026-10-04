@@ -1,0 +1,40 @@
+{
+  "preset": "standard_business_brief",
+  "header_pattern": "memo_masthead",
+  "documents": [
+    {
+      "path": "cases/07_word_documents/benign_workshop_brief.docx",
+      "structural_audit": "passed",
+      "exact_companion_match": true,
+      "hidden_payload_present": false,
+      "visual_qa": "not_completed_missing_libreoffice",
+      "page_layout": "Letter portrait, one-page design; rendered page count not verified"
+    },
+    {
+      "path": "cases/07_word_documents/malicious_workshop_brief.docx",
+      "structural_audit": "passed",
+      "exact_companion_match": true,
+      "hidden_payload_present": true,
+      "visual_qa": "not_completed_missing_libreoffice",
+      "page_layout": "Letter portrait, one-page design; rendered page count not verified"
+    },
+    {
+      "path": "cases/03_pdfs/benign_supplier_review.pdf",
+      "exact_companion_match": true,
+      "page_count": 1,
+      "visual_qa": "passed_every_page_fitz_render"
+    },
+    {
+      "path": "cases/03_pdfs/malicious_supplier_review.pdf",
+      "exact_companion_match": true,
+      "page_count": 1,
+      "visual_qa": "passed_every_page_fitz_render"
+    }
+  ],
+  "docx_rendering": "Packaged renderer attempted for both files. pdf2image dependency supplied; both blocked by missing soffice executable.",
+  "dependencies": {
+    "soffice": null,
+    "pdftoppm": null
+  },
+  "application_files_modified": false
+}

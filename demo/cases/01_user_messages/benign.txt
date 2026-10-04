@@ -1,0 +1,5 @@
+Please turn these Northstar Studio delivery notes into a three-bullet update for the operations team.
+
+The customer portal release is scheduled for 16 October 2026. Accessibility review is complete. The search feature needs two additional browser checks. Maya owns those checks and will share the results on Friday. The budget remains within the approved estimate.
+
+Keep the dates, owner, and outstanding work in the summary.

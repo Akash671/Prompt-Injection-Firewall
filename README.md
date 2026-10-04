@@ -6,6 +6,7 @@ Hackathon prototype: a security gateway that detects and mitigates prompt inject
 
 ```text
                  INPUT
+ (text,code,web,html,pdf,docs,image etc.)
                    ↓
             Parser / OCR
                    ↓
@@ -43,21 +44,65 @@ The policy engine remains authoritative. LLM recommendations are advisory only.
 
 ## Threats covered
 
-Instruction override, role change, secret extraction, credential theft, tool abuse, context poisoning, multi-step jailbreaks, indirect prompt injection and encoded instructions.
+```
+1. Instruction override
+2. role change
+3. secret extraction
+4. credential theft
+5. tool abuse
+6. context poisoning
+7. multi-step jailbreaks
+8. indirect prompt injection
+9. encoded instructions.
+```
 
 ## Content sources
 
-Text, HTML, PDF, DOCX and image/OCR content are supported. Source/trust metadata is preserved through the pipeline.
+```
+1. User messages
+2. Web pages
+3. PDFs
+4. Emails
+5. Markdown
+6. HTML
+7. Word documents
+8. API responses
+9. OCR text
+10. Source code
+11. Images (via OCR) 
+```
 
 ## Technology
 
-Python 3.9, scikit-learn, TF-IDF + Logistic Regression, SentenceTransformers, Cohere, BeautifulSoup, pypdf, python-docx, Tesseract/pytesseract, Streamlit, pytest, GitHub Actions.
+```
+Python 3.9
+scikit-learn
+TF-IDF + Logistic Regression
+SentenceTransformers
+LLMs(Cohere)
+BeautifulSoup
+pypdf
+python-docx
+Tesseract/pytesseract
+Streamlit
+pytest
+GitHub Actions.
+OpenAI Codex,Antropic Claude for writing code 
+```
 
-## Current benchmark
 
-Curated seed benchmark: 43 samples, Precision 1.00, Recall 1.00, F1 1.00.
+## Current 
 
-Unseen benchmark: 90 samples, Precision 0.976, Recall 1.00, F1 0.988.
+```
+Samples    : 10000
+TP         : 8921
+TN         : 771
+FP         : 229
+FN         : 79
+Precision  : 0.975
+Recall     : 0.991
+F1         : 0.983
+```
 
 These are small curated engineering benchmarks, not production-scale statistical validation.
 
@@ -92,13 +137,14 @@ Optional Cohere escalation:
 $env:COHERE_API_KEY="YOUR_KEY"
 
 # Linux/macOS
-export COHERE_API_KEY="YOUR_KEY"
+$ export COHERE_API_KEY="YOUR_KEY"
 ```
 
 Tests:
 
 ```bash
-python run_tests.py
+$ python -m tests.evaluate_benchmark
+$ python run_tests.py
 ```
 
 ## CI/CD
@@ -130,7 +176,7 @@ GitHub Actions performs dependency installation, Python compilation and the proj
                           │
              ┌────────────┼────────────┐
              ▼            ▼            ▼
-           Rules       Transformer    Semantic
+           Rules  Transformer,ML+DL Semantic
              │            │            │
              │            │          FAISS
              └────────────┼────────────┘
@@ -145,7 +191,7 @@ GitHub Actions performs dependency installation, Python compilation and the proj
                           │
                     if ambiguous
                           ▼
-                       Cohere
+                         LLMs
                           │
                           ▼
                     Final Policy

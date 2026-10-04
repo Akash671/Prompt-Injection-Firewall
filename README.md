@@ -150,7 +150,7 @@ $ python run_tests.py
 
 ## Demo:
 
-<img src="images/demo.PNG" alt="Prompt Injection Firewall demo" width="400" />
+<img src="images/demo.PNG" alt="Prompt Injection Firewall demo" width="400" /> <img src="images/demo2.PNG" alt="Prompt Injection Firewall demo" width="400" />
 
 ## CI/CD
 

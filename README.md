@@ -150,7 +150,7 @@ $ python run_tests.py
 
 Demo:
 
-![Alt text description](images/demo.png)
+<img src="images/screenshot.png" alt="Alt text" width="400" />
 
 ## CI/CD
 

@@ -56,7 +56,7 @@ The policy engine remains authoritative. LLM recommendations are advisory only.
 9. encoded instructions.
 ```
 
-## Content sources
+## Input Content sources
 
 ```
 1. User messages
@@ -72,7 +72,7 @@ The policy engine remains authoritative. LLM recommendations are advisory only.
 11. Images (via OCR) 
 ```
 
-## Technology
+## Technology Used
 
 ```
 Python 3.9
@@ -91,7 +91,7 @@ OpenAI Codex,Antropic Claude for writing code
 ```
 
 
-## Current 
+## Current Banchmark Score
 
 ```
 Samples    : 10000
@@ -106,7 +106,7 @@ F1         : 0.983
 
 These are small curated engineering benchmarks, not production-scale statistical validation.
 
-## Run
+## How to Run
 
 ```bash
 
